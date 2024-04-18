@@ -21,3 +21,16 @@ async function Recommend(){
     indexRecommend = indexRecommend%5;
     Card[0].style.backgroundImage = `url(${Recommended[indexRecommend++]})`;
 }
+
+function north(){
+    var Home = document.getElementsByClassName("home");
+    Home[0].style.display = "None";
+    var N = document.getElementsByClassName("North");
+    N[0].style.display = "flex";
+}
+function home(){
+    var Home = document.getElementsByClassName("home");
+    Home[0].style.display = "grid";
+    var N = document.getElementsByClassName("North");
+    N[0].style.display = "none";
+}

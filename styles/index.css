@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 body
 {
     margin: 0;
@@ -7,14 +6,13 @@ body
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    font-family: "Noto Sans";
+    font-family: "Cascadia code";
 }
 
 .body-div
 {
     width: 100%;
     height: 100%;
-    background-color:  white;
 }
 img
 {
@@ -26,13 +24,14 @@ nav
 {
     width: 100%;
     height: 70px;
-    background-color: #274b54;
+    background-color: #fe6c3f;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-weight: bolder;
+    color: #345e52;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.737) 0px 1px 3px -1px;
 }
 
 .container
@@ -41,7 +40,7 @@ nav
     height: calc(100% - 70px);
     margin:  0px auto;
     display: flex;
-    background-color: #B3DEE5;
+    background-color: #FFFBE6;
 }
 
 .sidebar
@@ -49,12 +48,11 @@ nav
     width: calc(16% - 8px);
     height: calc(100% - 16px);
     margin: auto;
-    background-color: #ffa101;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    background-color: #37966f;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -63,17 +61,12 @@ nav
     width: calc(82%);
     height: calc(100% - 16px);
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "card1 card3 card4" "card2 card3 card4" "card2 card3 card5";
-    gap: 8px;
+    border-radius: 8px;
 }
 
 .card1{
-    background-color: #FAE6B1;
+    background-color: #b9e4c9;
     grid-area: card1;
-    border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     display: flex;
     flex-direction: column;
@@ -84,7 +77,6 @@ nav
 .card2{
     background-color: #FAE6B1;
     grid-area: card2;
-    border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background-image: url(/images/slideshow-recommended/image1.jpg);
     background-size: cover;
@@ -96,7 +88,6 @@ nav
 .card3{
     background-color: #FAE6B1;
     grid-area: card3;
-    border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background-image: url(/images/card3.jpg);
     background-size: cover;
@@ -109,7 +100,6 @@ nav
 .card4{
     background-color: #FAE6B1;
     grid-area: card4;
-    border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background-image: url(/images/slideshow-trending/image1.jpg);
     background-size: cover;
@@ -118,14 +108,17 @@ nav
 }
 
 .card5{
-    background-color: #FAE6B1;
+    background-color: #b9e4c9;
     grid-area: card5;
-    border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.card5:hover, .card4:hover, .card3:hover, .card2:hover, .card1:hover{
+    cursor: pointer;
+    border: 2px groove black;
 }
 
 .sidebar-links{
@@ -147,7 +140,7 @@ ul li
 ul li a
 {
     text-decoration: none;
-    color:#17353d;
+    color:#b9e4c9;
     font-size: 1.2rem;
     font-weight: bold;
     transition: 0.2s;
@@ -227,6 +220,7 @@ a:hover
 .card1 p {
     text-align: center;
     font-size: 1.05rem;
+    font-family: "Oxygen";
 }
 .card1 span {
     text-align: center;
@@ -241,9 +235,138 @@ a:hover
 .card5 ul li{
     padding: 0;
     margin: 0;
+    font-family: "Oxygen";
 }
 .card5 ul li a{
     font-size: 1rem;
     font-weight: normal;
     color: #000;
+}
+
+
+.home{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "card1 card3 card4" "card2 card3 card4" "card2 card3 card5";
+    gap: 8px;
+}
+
+.North{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.North .header{
+    width: 100%;
+    height: 60px;
+    margin: auto 0px;
+    color: #FD5523;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.North .items{
+    width: 100%;
+    height: calc(100% - 60px);
+    margin: 2px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.North .items .veg{
+    width: calc(50% - 6px);
+    height: 100%;
+    margin-right: 6px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    position: relative;
+    scrollbar-width: 0px;
+}
+.North .items .non-veg{
+    width: calc(50% - 6px);
+    margin-left: 6px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    position: relative;
+}
+
+.North .items .non-veg ::-webkit-scrollbar {
+    display: none;
+}
+.North .items .veg ::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: 0;
+}
+
+.Title{
+    width: 100%;
+    height: 40px;
+    background-color:#37966f;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 500;
+    color:white;
+
+}
+.item-info{
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+    font-family: "Oxygen";
+
+}
+
+.item-cards{
+    width: calc(100% - 12px);
+    height: 50%;
+    margin:  16px auto;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    background-color: #b9e4c9;
+}
+
+.item-cards img{
+    width: calc(40% - 12px);
+    height: 100%;
+    margin: 0px 12px 0px 0px;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+.item-cards .info{
+    width: calc(60% - 12px);
+    height: 90%;
+    margin: auto 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-cards .info header{
+    width: 100%;
+    height: calc(15% - 8px);
+    margin: 0px 0px 8px 0px;
+}
+
+.item-cards .info p{
+    width: 100%;
+    height: calc(70% - 8px);
+    margin: 0px 0px 8px 0px;
+}
+
+.item-cards .info footer{
+    width: 100%;
+    height: 15%;
 }

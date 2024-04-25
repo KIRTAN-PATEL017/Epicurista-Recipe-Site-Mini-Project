@@ -45,11 +45,7 @@
                 
                 <div id="Home" style="width: 100%;height: 100%;">                    
                     <div class="card1">
-                        <span> About Us </span>
-                        <p> This Website is created by Kirtan Patel [22BCE3410] 
-                            as part of the cirriculum for my college Mini Project.
-                            I have used HTML, CSS to design and JavaScript to add Dynamicity.
-                        </p>
+                        
                     </div>
 
                     <div class="card2">
@@ -57,13 +53,7 @@
                     </div>
 
                     <div class="card3">
-                        <div class="greet-head"> WELCOME </div>
-                        <div class="greet-text"> Explore a world of flavors with our curated collection of recipes. 
-                            From comforting classics to innovative dishes, we have something for every palate and occasion.
-                            Whether you're a seasoned chef or a beginner in the kitchen, let us inspire you to create delicious 
-                            meals that will impress and satisfy
-                        </div>
-                        <div class="greet-foot">Happy Cooking</div>
+                        
                     </div>
 
                     <div class="card4">
@@ -71,12 +61,7 @@
                     </div>
 
                     <div class="card5">
-                        <span> Contact </span>
-                        <ul>
-                            <li>Phone No.: &nbsp;&nbsp;(+91) 9725521195</li>
-                            <li> Email: &nbsp;&nbsp;kirtan001177@gmail.com</li>
-                            <li><a href="https://github.com/KIRTAN-PATEL017">GitHub</a></li>
-                        </ul>
+                        
                     </div>                    
                 </div>
 
@@ -751,6 +736,19 @@
         </div>
     </div>
 
+    <script  src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="scripts/Card1.js" type="text/babel"></script>
+    <script src="scripts/Card3.js" type="text/babel"></script>
+    <script src="scripts/Card5.js" type="text/babel"></script>
+
+    <script type="text/babel">
+        ReactDOM.render(<Card1 />, document.querySelector(".card1"));
+        ReactDOM.render(<Card3 />, document.querySelector(".card3"));
+        ReactDOM.render(<Card5 />, document.querySelector(".card5"));
+    </script>
 
     <script src="scripts/index.js"></script>
 </body>

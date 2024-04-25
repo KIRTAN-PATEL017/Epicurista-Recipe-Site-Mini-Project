@@ -6,9 +6,9 @@ const Recommended = ["/images/slideshow-recommended/image1.jpg", "/images/slides
 "/images/slideshow-recommended/image3.jpg", "/images/slideshow-recommended/image4.jpg","/images/slideshow-recommended/image5.jpg"];
 
 const Data = { 
-    "ALOO POORI" : `<h1>Aloo Poori Recipe</h1>
-
-    <h2>Ingredients</h2>
+    "ALOO POORI" : {
+        src:"images/north/veg/aloopoori.jpeg",
+        desc :`<h2>Ingredients</h2>
     <ul>
         <li>2 cups whole wheat flour (atta)</li>
         <li>2 medium potatoes, boiled and mashed</li>
@@ -43,9 +43,11 @@ const Data = {
     </ul>
 
     <h2>Average Time to Prepare</h2>
-    <p>The average time to prepare Aloo Poori is around 45 minutes.</p>` ,
+    <p>The average time to prepare Aloo Poori is around 45 minutes.</p>`} ,
     
-    "ALOO PARATHA" : `<h2>Ingredients:</h2>
+    "ALOO PARATHA" : {
+        src : "images/north/veg/alooparatha.jpg",
+        desc:`<h2>Ingredients:</h2>
     <ul>
         <li>2 cups whole wheat flour</li>
         <li>2 medium potatoes, boiled and mashed</li>
@@ -85,9 +87,12 @@ const Data = {
 
     <p><em>*Nutritional values are approximate and may vary based on actual ingredients used.</em></p>
 
-    <p><strong>Average Time to Prepare:</strong> 40 minutes</p>`,
+    <p><strong>Average Time to Prepare:</strong> 40 minutes</p>`
+} ,
 
-    "PANNER BUTTER MASALA": `<h2>Ingredients:</h2>
+    "PANEER BUTTER MASALA": {
+        src : "images/north/veg/paneerBM.jpeg",
+        desc: `<h2>Ingredients:</h2>
     <ul>
         <li>250g paneer (cottage cheese), cubed</li>
         <li>2 tablespoons butter</li>
@@ -131,9 +136,11 @@ const Data = {
     <p>Preparation Time: 15 minutes</p>
     <p>Cooking Time: 25 minutes</p>
     <p>Total Time: 40 minutes</p>
-    ` ,
+    ` },
 
-    "RAJMA CHAWAL" : `<h2>Ingredients:</h2>
+    "RAJMA CHAWAL" : {
+        src:"images/north/veg/rajmarice.jpeg",
+        desc: `<h2>Ingredients:</h2>
     <ul>
         <li>1 cup dried rajma (red kidney beans)</li>
         <li>2 cups basmati rice</li>
@@ -177,9 +184,12 @@ const Data = {
         <li>Calcium: 100mg</li>
     </ul>
 
-    <p>Average Time to Prepare: 1 hour (excluding soaking time for rajma)</p>` ,
+    <p>Average Time to Prepare: 1 hour (excluding soaking time for rajma)</p>`
+} ,
 
-    "CHICKEN SANDWICH" : `<h2>Ingredients:</h2>
+    "CHICKEN SANDWICH" : {
+        src:"images/north/non-veg/chickentikka.jpeg",
+        desc :    `<h2>Ingredients:</h2>
     <ul>
         <li>2 boneless, skinless chicken breasts</li>
         <li>4 slices of sandwich bread (whole wheat or white)</li>
@@ -221,9 +231,12 @@ const Data = {
     <h2>Average Time to Prepare:</h2>
     <p>Preparation Time: 15 minutes</p>
     <p>Cooking Time: 15 minutes</p>
-    <p>Total Time: 30 minutes</p>` ,
+    <p>Total Time: 30 minutes</p>`
+} ,
 
-    "CHICKEN TIKKA MASALA" : `<h2>Ingredients:</h2>
+    "CHICKEN TIKKA MASALA" : {
+        src:"images/north/non-veg/chillichicken.jpeg",
+        desc: `<h2>Ingredients:</h2>
     <ul>
         <li>2 lbs (900g) boneless, skinless chicken thighs, cut into bite-sized pieces</li>
         <li>1 cup plain yogurt</li>
@@ -273,9 +286,11 @@ const Data = {
     <h2>Average Time to Prepare:</h2>
     <p>Preparation: 20 minutes (plus marinating time)</p>
     <p>Cooking: 30 minutes</p>
-    <p>Total Time: 50 minutes (plus marinating time)</p>`,
+    <p>Total Time: 50 minutes (plus marinating time)</p>`},
 
-    "CHILLI CHICKEN" : ` <h2>Ingredients:</h2>
+    "CHILLI CHICKEN" : {
+        src:"images/north/non-veg/chillichicken.jpeg",
+        desc: `<h2>Ingredients:</h2>
     <ul>
         <li>500g boneless chicken, cut into small pieces</li>
         <li>2 tablespoons soy sauce</li>
@@ -314,9 +329,11 @@ const Data = {
     </ul>
 
     <h2>Average Preparation Time:</h2>
-    <p>Approximately 45 minutes (including marination time).</p>` ,
+    <p>Approximately 45 minutes (including marination time).</p>`} ,
 
-    "TANDOORI CHICKEN" : ` <h2>Ingredients:</h2>
+    "TANDOORI CHICKEN" : {
+        src:"images/north/non-veg/tandoorichicken.jpeg",
+        desc: `<h2>Ingredients:</h2>
     <ul>
         <li>1 whole chicken, about 3-4 lbs, skinless and cut into pieces</li>
         <li>1 cup plain yogurt</li>
@@ -354,29 +371,31 @@ const Data = {
 
     <p><em>Note: Nutritional values are approximate and may vary based on specific ingredients used.</em></p>
 
-    <p><strong>Average Time to Prepare:</strong> Approximately 2.5 hours (including marinating time).</p>`
+    <p><strong>Average Time to Prepare:</strong> Approximately 2.5 hours (including marinating time).</p>`}
    
 };
+
 
 var SidebarToggle = document.getElementsByClassName("material-symbols-outlined");
 SidebarToggle[0].addEventListener("click", () => {
     let Root = document.documentElement.style
     if(Root.getPropertyValue('--sidebar-width') != '50px'){
         Root.setProperty('--sidebar-width', "50px");
+        document.querySelector(".content").style.width = "calc(98% - var(--sidebar-width))";
         document.querySelector(".sidebar .sidebar-links").style.display = "none";
         document.querySelector(".sidebar span").innerHTML = "keyboard_double_arrow_right";
-    }else{
+    }
+    else{
         Root.setProperty('--sidebar-width', "calc(16% - 8px)");
         document.querySelector(".sidebar .sidebar-links").style.display = "block";
         document.querySelector(".sidebar span").innerHTML = "keyboard_double_arrow_left";
     }
-    console.log(Root.getPropertyValue("--sidebar-width"));
 });
 
 var indexTrend = 0;
 var indexRecommend = 0;
 
-// setInterval(Trend,4000);
+setInterval(Trend,3000);
 
 function Trend(){
     var Card = document.getElementsByClassName("card4");
@@ -387,17 +406,76 @@ function Trend(){
     Card[0].style.backgroundImage = `url(${Recommended[indexRecommend++]})`;
 }
 
-function north(){
-    var Home = document.getElementsByClassName("home");
-    Home[0].style.display = "None";
-    var N = document.getElementsByClassName("North");
-    N[0].style.display = "flex";
-}
+
 function home(){
-    var Home = document.getElementsByClassName("home");
-    Home[0].style.display = "grid";
-    var N = document.getElementsByClassName("North");
-    N[0].style.display = "none";
+    document.getElementById("Home").style.display = "grid";
+    document.getElementById("North").style.display = "none";
+    document.getElementById("South").style.display = "none";
+    document.getElementById("Asian").style.display = "none";
+    document.getElementById("Diet").style.display = "none";
+    document.getElementById("Trending").style.display = "none";
+    document.getElementById("Latest").style.display = "none";
+    document.getElementById("searched").style.display = "none";
+}
+function north(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("North").style.display = "flex";
+    document.getElementById("South").style.display = "none";
+    document.getElementById("Asian").style.display = "none";
+    document.getElementById("Diet").style.display = "none";
+    document.getElementById("Trending").style.display = "none";
+    document.getElementById("Latest").style.display = "none";
+    document.getElementById("searched").style.display = "none";
+}
+function south(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("North").style.display = "none";
+    document.getElementById("South").style.display = "flex";
+    document.getElementById("Asian").style.display = "none";
+    document.getElementById("Diet").style.display = "none";
+    document.getElementById("Trending").style.display = "none";
+    document.getElementById("Latest").style.display = "none";
+    document.getElementById("searched").style.display = "none";
+}
+function asian(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("North").style.display = "none";
+    document.getElementById("South").style.display = "none";
+    document.getElementById("Asian").style.display = "flex";
+    document.getElementById("Diet").style.display = "none";
+    document.getElementById("Trending").style.display = "none";
+    document.getElementById("Latest").style.display = "none";
+    document.getElementById("searched").style.display = "none";
+}
+function diet(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("North").style.display = "none";
+    document.getElementById("South").style.display = "none";
+    document.getElementById("Asian").style.display = "none";
+    document.getElementById("Diet").style.display = "flex";
+    document.getElementById("Trending").style.display = "none";
+    document.getElementById("Latest").style.display = "none";
+    document.getElementById("searched").style.display = "none";
+}
+function trending(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("North").style.display = "nine";
+    document.getElementById("South").style.display = "none";
+    document.getElementById("Asian").style.display = "none";
+    document.getElementById("Diet").style.display = "none";
+    document.getElementById("Trending").style.display = "flex";
+    document.getElementById("Latest").style.display = "none";
+    document.getElementById("searched").style.display = "none";
+}
+function latest(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("North").style.display = "none";
+    document.getElementById("South").style.display = "none";
+    document.getElementById("Asian").style.display = "none";
+    document.getElementById("Diet").style.display = "none";
+    document.getElementById("Trending").style.display = "none";
+    document.getElementById("Latest").style.display = "flex";
+    document.getElementById("searched").style.display = "none";
 }
 
 function popupClose(){
@@ -413,7 +491,6 @@ for(var i=0; i<cardElements.length;i++){
     
     const elem1 = cardElements[i].querySelector(".info header").innerHTML;
     const elem2 = cardElements[i].querySelector(".info p").innerHTML;
-
     cardElements[i].addEventListener("click", () => {
 
         document.querySelector(".popup").innerHTML = `
@@ -426,7 +503,7 @@ for(var i=0; i<cardElements.length;i++){
                 <div class="close"><span class="material-symbols-outlined" onclick="popupClose()" style="cursor: pointer;">close</span></div>
             </header>
             <section>
-                ${Data[elem1]}
+                ${Data[elem1].desc}
             </section>
             `
         var PopDiv = document.getElementsByClassName("pop-div");
@@ -434,6 +511,70 @@ for(var i=0; i<cardElements.length;i++){
         var Pop = document.getElementsByClassName("popup");
         Pop[0].style.transform = "scale(1)" ;
 
-
     });
 }
+
+function ShowVeg(){
+    var Veg = document.getElementsByClassName("veg");
+    var NonVeg = document.getElementsByClassName("non-veg");
+    for(var i=0;i<Veg.length;i++) {
+        Veg[i].style.display = "grid";
+        NonVeg[i].style.display = "none";
+    }
+    for(var i=0;i<document.getElementsByClassName("toggle-veg").length;i++){
+        document.getElementsByClassName("toggle-veg")[i].style.backgroundColor = "#fae6b1ee";        
+        document.getElementsByClassName("toggle-nonveg")[i].style.backgroundColor = "transparent";
+    }
+}
+
+function ShowNonVeg(){
+    var Veg = document.getElementsByClassName("veg");
+    var NonVeg = document.getElementsByClassName("non-veg");
+    for(var i=0;i<Veg.length;i++) {
+        Veg[i].style.display = "none";
+        NonVeg[i].style.display = "grid";
+    }
+    for(var i=0;i<document.getElementsByClassName("toggle-veg").length;i++){
+        document.getElementsByClassName("toggle-veg")[i].style.backgroundColor = "transparent";        
+        document.getElementsByClassName("toggle-nonveg")[i].style.backgroundColor = "#fae6b1ee";
+    }
+}
+
+
+const textInput = document.getElementById("search");
+var text;
+var reg;
+textInput.addEventListener('keydown', (Event) => {
+    if(Event.key === 'Enter'){
+        text = textInput.value;
+        text = text.toLowerCase();
+        textInput.value = "";
+        reg = new RegExp(text ,'i');
+        document.getElementById("searched").innerHTML= "";
+        for(const [k, v] of Object.entries(Data)){
+            let key = `${k}`;
+            key = key.toLowerCase();
+            if(key.search(text) >= 0){
+                console.log(key);
+                document.getElementById("searched").innerHTML += `
+                <div class="item-cards">
+                    <img src= ${Data[k].src} alt="img">
+                    <div class="info">
+                        <header> ${k} </header>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    </div>
+                </div>`;
+                document.getElementById("searched").style.display = "grid";
+                document.getElementById("Home").style.display = "none";
+                document.getElementById("North").style.display = "none";
+                document.getElementById("South").style.display = "none";
+                document.getElementById("Asian").style.display = "none";
+                document.getElementById("Diet").style.display = "none";
+                document.getElementById("Trending").style.display = "none";
+                document.getElementById("Latest").style.display = "none";
+                console.log(document.getElementById("searched").innerHTML);
+            }
+        }
+    }
+
+});

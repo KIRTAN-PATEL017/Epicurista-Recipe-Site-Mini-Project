@@ -20,24 +20,30 @@
         </div>
     </div>
     <div class="body-div">
-        <nav> Epicurista </nav>
+        <nav> 
+            <div class="nav-title">EPICURISTA</div> 
+            <div class="search-bar"> <input type="text" placeholder="Search..." name="Search" id="search"> </div>
+        </nav>
         <div class="container">
             <div class="sidebar">
                 <span class="material-symbols-outlined"> keyboard_double_arrow_left </span>
                 <ul class="sidebar-links">
                     <li> <a href="#" onclick="home()"> HOME </a> </li>
                     <li> <a href="#" onclick="north()">North Indian </a></li>
-                    <li> <a href="#">South Indian </a> </li>
-                    <li> <a href="#"> Asian </a> </li>
-                    <li> <a href="#"> Diet </a> </li>
-                    <li> <a href="#"> Trending </a> </li>
-                    <li> <a href="#"> Latest </a> </li>
+                    <li> <a href="#" onclick="south()">South Indian </a> </li>
+                    <li> <a href="#" onclick="asian()"> Asian </a> </li>
+                    <li> <a href="#" onclick="diet()"> Diet </a> </li>
+                    <li> <a href="#" onclick="trending()"> Trending </a> </li>
+                    <li> <a href="#" onclick="latest()"> Latest </a> </li>
                 </ul>
             </div>
 
             <div class="content">
+                <div id="searched">
+
+                </div>
                 
-                <div class="home" style="width: 100%;height: 100%;">                    
+                <div id="Home" style="width: 100%;height: 100%;">                    
                     <div class="card1">
                         <span> About Us </span>
                         <p> This Website is created by Kirtan Patel [22BCE3410] 
@@ -74,85 +80,549 @@
                     </div>                    
                 </div>
 
-                <div class="North" style="width: 100%;height: 100%;">
+
+                <div class="North" id="North">
                     <div class="header">
                         North Indian
                     </div>
 
                     <div class="items">
+                        <div class="toggle-menu">
+                            <div class="Title toggle-veg" onclick="ShowVeg()">Veg</div>
+                            <div class="Title toggle-nonveg" onclick="ShowNonVeg()">Non-Veg</div>
+                        </div>
+
                         <div class="veg">
-                            <div class="Title">Veg</div>
-                                <div class="item-info">
-                                    <div class="item-cards">
-                                        <img src="images/north/veg/aloopoori.jpeg" alt="img">
-                                        <div class="info">
-                                            <header>ALOO POORI</header>
-                                            <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
-                                        
-                                        </div>
-                                    </div>  
-
-                                    <div class="item-cards">
-                                        <img src="images/north/veg/alooparatha.jpg" alt="img">
-                                        <div class="info">
-                                            <header>ALOO PARATHA</header>
-                                            <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
-                                        
-                                        </div>
-                                    </div>
-
-                                    <div class="item-cards">
-                                        <img src="images/north/veg/paneerBM.jpeg" alt="img">
-                                        <div class="info">
-                                            <header>PANEER BUTTER MASALA</header>
-                                            <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
-                                        
-                                        </div>
-                                    </div>
-
-                                    <div class="item-cards">
-                                        <img src="images/north/veg/rajmarice.jpeg" alt="img">
-                                        <div class="info">
-                                            <header> RAJMA CHAWAL</header>
-                                            <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
-                                        
-                                        </div>
-                                    </div>
+                            <div class="item-cards">
+                                <img src="images/north/veg/aloopoori.jpeg" alt="img">
+                                <div class="info">
+                                    <header>ALOO POORI</header>
+                                    <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
+                                
                                 </div>
+                            </div>  
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/alooparatha.jpg" alt="img">
+                                <div class="info">
+                                    <header>ALOO PARATHA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/paneerBM.jpeg" alt="img">
+                                <div class="info">
+                                    <header>PANEER BUTTER MASALA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
                         </div>
 
 
 
-                        <div class="non-veg">
-                            <div class="Title">Non-Veg</div>
-                            <div class="item-info">
-                                <div class="item-cards">
-                                    <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
-                                    <div class="info">
-                                        <header>CHICKEN SANDWICH</header>
-                                        <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
-                                    
-                                    </div>
-                                </div> 
+                        <div class="non-veg">                                                                                
+                            
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHILLI CHICKEN</header>
+                                    <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
                                 
-                                <div class="item-cards">
-                                    <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
-                                    <div class="info">
-                                        <header>CHICKEN TIKKA MASALA</header>
-                                        <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
-                                    
-                                    </div>
-                                </div> 
+                                </div>
+                            </div> 
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN TIKKA MASALA</header>
+                                    <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
+                                </div>
+                            </div> 
 
-                                <div class="item-cards">
-                                    <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
-                                    <div class="info">
-                                        <header>CHILLI CHICKEN </header>
-                                        <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
-                                    
-                                    </div>
-                                </div> 
 
+                             
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div> 
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/tandoorichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>TANDOORI CHICKEN</header>
+                                    <p>Tandoori chicken is a popular Indian dish made by marinating chicken in a blend of yogurt and spices, including cayenne pepper, turmeric, and garam masala. The marinated chicken is traditionally cooked in a tandoor, a clay oven, resulting in tender, smoky, and flavorful meat with a vibrant red-orange hue.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="North" id="South">
+                    <div class="header">
+                        South Indian
+                    </div>
+
+                    <div class="items">
+                        <div class="toggle-menu">
+                            <div class="Title toggle-veg"  onclick="ShowVeg()">Veg</div>
+                            <div class="Title toggle-nonveg" onclick="ShowNonVeg()">Non-Veg</div>
+                        </div>
+
+                        <div class="veg">
+                              
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/alooparatha.jpg" alt="img">
+                                <div class="info">
+                                    <header>ALOO PARATHA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+                            <div class="item-cards">
+                                <img src="images/north/veg/aloopoori.jpeg" alt="img">
+                                <div class="info">
+                                    <header>ALOO POORI</header>
+                                    <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
+                                
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+                            <div class="item-cards">
+                                <img src="images/north/veg/paneerBM.jpeg" alt="img">
+                                <div class="info">
+                                    <header>PANEER BUTTER MASALA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="non-veg">                                                                                
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN TIKKA MASALA</header>
+                                    <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
+                                </div>
+                            </div> 
+
+                            
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/tandoorichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>TANDOORI CHICKEN</header>
+                                    <p>Tandoori chicken is a popular Indian dish made by marinating chicken in a blend of yogurt and spices, including cayenne pepper, turmeric, and garam masala. The marinated chicken is traditionally cooked in a tandoor, a clay oven, resulting in tender, smoky, and flavorful meat with a vibrant red-orange hue.</p>
+                                
+                                </div>
+                            </div>
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHILLI CHICKEN</header>
+                                    <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
+                                
+                                </div>
+                            </div>  
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div> 
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="North" id="Asian">
+                    <div class="header">
+                        Asian
+                    </div>
+
+                    <div class="items">
+                        <div class="toggle-menu">
+                            <div class="Title toggle-veg" onclick="ShowVeg()">Veg</div>
+                            <div class="Title toggle-nonveg" onclick="ShowNonVeg()">Non-Veg</div>
+                        </div>
+
+                        <div class="veg">
+                            <div class="item-cards">
+                                <img src="images/north/veg/aloopoori.jpeg" alt="img">
+                                <div class="info">
+                                    <header>ALOO POORI</header>
+                                    <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
+                                
+                                </div>
+                            </div>  
+
+                            
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/paneerBM.jpeg" alt="img">
+                                <div class="info">
+                                    <header>PANEER BUTTER MASALA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+                            <div class="item-cards">
+                                <img src="images/north/veg/alooparatha.jpg" alt="img">
+                                <div class="info">
+                                    <header>ALOO PARATHA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            
+                        </div>
+
+
+
+                        <div class="non-veg">                                                                                
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN TIKKA MASALA</header>
+                                    <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
+                                </div>
+                            </div> 
+
+                            
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/tandoorichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>TANDOORI CHICKEN</header>
+                                    <p>Tandoori chicken is a popular Indian dish made by marinating chicken in a blend of yogurt and spices, including cayenne pepper, turmeric, and garam masala. The marinated chicken is traditionally cooked in a tandoor, a clay oven, resulting in tender, smoky, and flavorful meat with a vibrant red-orange hue.</p>
+                                
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div> 
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHILLI CHICKEN</header>
+                                    <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
+                                
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="North" id="Diet">
+                    <div class="header">
+                        Diet
+                    </div>
+
+                    <div class="items">
+                        <div class="toggle-menu">
+                            <div class="Title toggle-veg" onclick="ShowVeg()">Veg</div>
+                            <div class="Title toggle-nonveg" onclick="ShowNonVeg()">Non-Veg</div>
+                        </div>
+
+                        <div class="veg">
+                            <div class="item-cards">
+                                <img src="images/north/veg/aloopoori.jpeg" alt="img">
+                                <div class="info">
+                                    <header>ALOO POORI</header>
+                                    <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
+                                
+                                </div>
+                            </div>  
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/alooparatha.jpg" alt="img">
+                                <div class="info">
+                                    <header>ALOO PARATHA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/paneerBM.jpeg" alt="img">
+                                <div class="info">
+                                    <header>PANEER BUTTER MASALA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="non-veg">                                                                                
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN TIKKA MASALA</header>
+                                    <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHILLI CHICKEN</header>
+                                    <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
+                                
+                                </div>
+                            </div> 
+
+                             
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div> 
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/tandoorichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>TANDOORI CHICKEN</header>
+                                    <p>Tandoori chicken is a popular Indian dish made by marinating chicken in a blend of yogurt and spices, including cayenne pepper, turmeric, and garam masala. The marinated chicken is traditionally cooked in a tandoor, a clay oven, resulting in tender, smoky, and flavorful meat with a vibrant red-orange hue.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="North" id="Trending">
+                    <div class="header">
+                        Trending
+                    </div>
+
+                    <div class="items">
+                        <div class="toggle-menu">
+                            <div class="Title toggle-veg" onclick="ShowVeg()">Veg</div>
+                            <div class="Title toggle-nonveg" onclick="ShowNonVeg()">Non-Veg</div>
+                        </div>
+
+                        <div class="veg">
+                            <div class="item-cards">
+                                <img src="images/north/veg/aloopoori.jpeg" alt="img">
+                                <div class="info">
+                                    <header>ALOO POORI</header>
+                                    <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
+                                
+                                </div>
+                            </div>  
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/alooparatha.jpg" alt="img">
+                                <div class="info">
+                                    <header>ALOO PARATHA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/paneerBM.jpeg" alt="img">
+                                <div class="info">
+                                    <header>PANEER BUTTER MASALA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="non-veg">                                                                                
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN TIKKA MASALA</header>
+                                    <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHILLI CHICKEN</header>
+                                    <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
+                                
+                                </div>
+                            </div> 
+
+                             
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
                                 <div class="item-cards">
                                     <img src="images/north/non-veg/tandoorichicken.jpeg" alt="img">
                                     <div class="info">
@@ -160,14 +630,122 @@
                                         <p>Tandoori chicken is a popular Indian dish made by marinating chicken in a blend of yogurt and spices, including cayenne pepper, turmeric, and garam masala. The marinated chicken is traditionally cooked in a tandoor, a clay oven, resulting in tender, smoky, and flavorful meat with a vibrant red-orange hue.</p>
                                     
                                     </div>
-                                </div> 
-                            </div>
-                            
-                                
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <div class="North" id="Latest">
+                    <div class="header">
+                        Latest
+                    </div>
+
+                    <div class="items">
+                        <div class="toggle-menu">
+                            <div class="Title toggle-veg"  onclick="ShowVeg()">Veg</div>
+                            <div class="Title toggle-nonveg"  onclick="ShowNonVeg()">Non-Veg</div>
+                        </div>
+
+                        <div class="veg">
+                            <div class="item-cards">
+                                <img src="images/north/veg/aloopoori.jpeg" alt="img">
+                                <div class="info">
+                                    <header>ALOO POORI</header>
+                                    <p>Aloo poori is a popular Indian dish consisting of deep-fried bread (poori) served with a spicy potato (aloo) curry. The poories are crispy and golden brown, while the aloo curry is flavorful with spices like cumin, turmeric, and garam masala.</p>
+                                
+                                </div>
+                            </div>  
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/alooparatha.jpg" alt="img">
+                                <div class="info">
+                                    <header>ALOO PARATHA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/paneerBM.jpeg" alt="img">
+                                <div class="info">
+                                    <header>PANEER BUTTER MASALA</header>
+                                    <p>Aloo paratha is a popular North Indian flatbread stuffed with spiced mashed potatoes. The dough is rolled out, filled with the potato mixture, and then cooked on a griddle with ghee or oil until golden and crispy. It's often served with yogurt, pickles, or chutney.</p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+
+                            <div class="item-cards">
+                                <img src="images/north/veg/rajmarice.jpeg" alt="img">
+                                <div class="info">
+                                    <header>RAJMA CHAWAL</header>
+                                    <p>Rajma Chawal is a popular North Indian dish consisting of red kidney beans cooked in a spiced tomato-onion gravy, served with steamed basmati rice. It's a comforting, flavorful meal often enjoyed with a side of pickles or yogurt. </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="non-veg">                                                                                
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickentikka.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN TIKKA MASALA</header>
+                                    <p> Chicken Tikka Masala is a popular Indian dish featuring marinated pieces of grilled chicken (tikka) in a creamy, spiced tomato-based sauce. The chicken is typically marinated in yogurt and spices like cumin and garam masala before being cooked and then simmered in a rich, tangy sauce flavored with garlic, ginger, and fenugreek.</p>
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chillichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHILLI CHICKEN</header>
+                                    <p>Chilli Chicken is a popular Indo-Chinese dish featuring crispy fried chicken pieces tossed in a spicy, tangy sauce. It's flavored with garlic, ginger, soy sauce, and green chilies, offering a perfect balance of heat and savory flavors. Garnished with spring onions, it's a delicious appetizer or main course.</p>
+                                
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/tandoorichicken.jpeg" alt="img">
+                                <div class="info">
+                                    <header>TANDOORI CHICKEN</header>
+                                    <p>Tandoori chicken is a popular Indian dish made by marinating chicken in a blend of yogurt and spices, including cayenne pepper, turmeric, and garam masala. The marinated chicken is traditionally cooked in a tandoor, a clay oven, resulting in tender, smoky, and flavorful meat with a vibrant red-orange hue.</p>
+                                
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div> 
+
+                            <div class="item-cards">
+                                <img src="images/north/non-veg/chickensandwich.jpeg" alt="img">
+                                <div class="info">
+                                    <header>CHICKEN SANDWICH</header>
+                                    <p> A chicken sandwich typically consists of a breaded or grilled chicken fillet served between two slices of bread or a bun. It often includes lettuce, tomato, and mayonnaise for added flavor and texture. This popular sandwich offers a satisfying combination of crispy chicken and fresh accompaniments in a handheld meal.</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
             </div>
         </div>
